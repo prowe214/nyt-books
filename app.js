@@ -26,10 +26,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/books', function (req, res) {
   unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + process.env.NYT_API_KEY)
     .end(function (response) {
-      console.log(response.body);
+
       var NYTBooks = response.body.results.books;
       console.log(NYTBooks);
       res.render('index', {title: response.body.results.list_name, updated: response.body.results.updated, books: NYTBooks});
+    });
+});
+
+app.get('/news', function (req, res) {
+  unirest.get('http://api.nytimes.com/svc/topstories/v1/home.json?api-key=' + process.env.NYT_NEWS_KEY)
+    .end(function (response) {
+      console.log('RESULTS = ', JSON.parse(response.body).results[0]);
+      var news = JSON.parse(response.body).results;
+      console.log(news);
+
+      res.render('index', {title: 'Top Stories from the New York Times', updated: response.body.last_updated, news: news});
     });
 });
 
