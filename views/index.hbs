@@ -1,2 +1,17 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{#if updated}}
+Updated {{updated}}
+{{/if}}
+
+{{#if books}}
+  {{#each books}}
+    <article class="item">
+      <h2>{{this.title}}</h2>
+      by <strong>{{this.author}}</strong>
+      <img src="{{this.book_image}}" alt="" />
+    </article>
+
+  {{/each}}
+{{/if}}

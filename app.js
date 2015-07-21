@@ -24,12 +24,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/books', function (req, res) {
-  console.log('*****ALIVE');
   unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + process.env.NYT_API_KEY)
     .end(function (response) {
-      console.log('*****IN END');
       console.log(response.body);
-      res.render('index', {title: response.body.results.list_name});
+      var NYTBooks = response.body.results.books;
+      console.log(NYTBooks);
+      res.render('index', {title: response.body.results.list_name, updated: response.body.results.updated, books: NYTBooks});
     });
 });
 
