@@ -1,8 +1,20 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
+
+article {
+  float: left;
+  width: 47%;
+  background-color: gray;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  margin: 5px; }
+  article .text {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white; }
