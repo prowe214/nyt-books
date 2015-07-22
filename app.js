@@ -39,8 +39,9 @@ app.get('/news', function (req, res) {
       console.log('RESULTS = ', JSON.parse(response.body).results[0]);
       var news = JSON.parse(response.body).results;
       console.log(news);
+      console.log('DATE = ' + news.updated_date);
 
-      res.render('index', {title: 'Top Stories from the New York Times', updated: response.body.last_updated, news: news});
+      res.render('index', {title: 'Top Stories from the New York Times', updated: response.body.updated_date, news: news});
     });
 });
 

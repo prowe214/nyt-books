@@ -10,8 +10,15 @@ article {
   .text {
     display: block;
     background-color: rgba(0, 0, 0, .5);
+    min-height: 200px;
     padding: 20px;
-    height: 150px;
     color: white;
   }
+  .date {
+    font-style: italic;
+  }
+}
+
+a>h2 {
+  color: white;
 }

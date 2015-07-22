@@ -25,6 +25,11 @@ article {
   article .text {
     display: block;
     background-color: rgba(0, 0, 0, 0.5);
+    min-height: 175px;
     padding: 20px;
-    height: 150px;
     color: white; }
+  article .date {
+    font-style: italic; }
+
+a > h2 {
+  color: white; }

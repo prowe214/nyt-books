@@ -3,6 +3,8 @@
   {{#if updated}}
     Updated {{updated}}
   {{/if}}
+  <a href="/books"><h2>NYT Best Sellers</h2></a>
+  <a href="/news"><h2>Top News Stories</h2></a>
 </div>
 
 {{#if books}}
@@ -20,12 +22,14 @@
 {{/if}}
 
 {{#if news}}
-<h1>HELLO</h1>
   {{#each news}}
     <a href="{{this.url}}">
-      <article class="item" style="background-color: gray"> 
+      <article class="item" style="background-color: gray">
         <div class="text">
           <h2>{{this.title}}</h2>
+          <p class='date'>
+            Updated {{this.updated_date}}
+          </p>
           <p>
             {{this.abstract}}
           </p>
